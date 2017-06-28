@@ -34,7 +34,7 @@ New syslog records can be ingested by placing them in a /logstash/syslog/year/. 
 * Finish the initial upload into GitHub
 * Fix the sample HTTP log so it will parse properly.
 * Create an initial syslog entry that has more fields parsed out, perhaps mimick an ssh log entry.
-* Keep checking to see if logstash can use the maxmind db with ASN data (ASOF 5.4.2, this didn't work.)
+* Keep checking to see if logstash can use the maxmind db with ASN data (ASOF 5.4.3, this didn't work.)
 * Add the ability for graphics to be displayed in a markdown 
 * Upload and maintain working VM to share
 * Add the ability to:
