@@ -54,7 +54,7 @@ sed -i '/#server.name: /s/^#//' /etc/kibana/kibana.yml
 sed -i -e "s|your-hostname|$HOSTNAME|g" /etc/kibana/kibana.yml
 
 sed -i '/^#elasticsearch.url: /s/^#//' /etc/kibana/kibana.yml
-sed -i '/^#kibana.defaultAppId: "discover"/c\kibana.defaultAppId: "dashboard/Main-Dashboard"' /etc/kibana/kibana.yml
+# sed -i '/^#kibana.defaultAppId: "discover"/c\kibana.defaultAppId: "dashboard/Main-Dashboard"' /etc/kibana/kibana.yml
 sed -i '/^#logging.quiet: false/c\logging.quiet: true' /etc/kibana/kibana.yml
 
 # Start Kibana
