@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<service>
-  <short>elk-windows-json</short>
-  <description>This is the ELK firewall service.</description>
-  <port protocol="tcp" port="6052"/>
-</service>
-
