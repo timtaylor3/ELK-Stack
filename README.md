@@ -24,6 +24,8 @@ I welcome sample logs to parse as long as they are shareable and will not cause 
 
 Sort of.  Take a look at [Security Onion](http://blog.securityonion.net/2017/06/towards-elastic-on-security-onion.html) if your are looking for network analysis functionality.  If you want a more mature system, check out [SOF-ELK](https://github.com/philhagen/sof-elk).  In most cases, one of these two systems might fit your needs.
 
+## Assumptions
+
 I assume the user know something about how Kibana works and can browse to the appropriate url, ie an IP or localhost.  To view the two records inserted at the end of the installation, create a default index of logstash-\* and an index named httpdlog-\* to see the sample records on the discovery table.  Don't forget you may need to change the time range to see the records.
 
 New syslog records can be ingested by placing them in a /logstash/syslog/year/.  The year will be added to the syslog date, since syslog doesn't store the year.  New httpd logs can be ingested simply by putting them in /logstash/httpd.  
