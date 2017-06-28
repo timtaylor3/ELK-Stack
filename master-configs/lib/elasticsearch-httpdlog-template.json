@@ -1,0 +1,72 @@
+{
+  "template" : "httpdlog-*",
+  "order" : "1",
+  "settings" : {
+    "index.refresh_interval" : "5s"
+  },
+  "mappings" : {
+    "_default_" : {
+      "_all" : {"enabled" : true, "norms" : false},
+      "dynamic_templates" : [ {
+        "message_field" : {
+          "path_match" : "message",
+          "match_mapping_type" : "string",
+          "mapping" : {
+            "type" : "text",
+            "norms" : false
+          }
+        }
+      },
+      {
+         "ip_address_fields" : {
+           "match" : "*_ip",
+           "mapping" : { "type" : "ip" }
+          }
+       },
+      {
+        "string_fields" : {
+          "match" : "*",
+          "match_mapping_type" : "string",
+          "mapping" : {
+            "type" : "text", "norms" : false,
+            "fields" : {
+              "keyword" : { 
+                "type": "keyword" }
+            }
+          }
+        }
+      }  
+      ],
+      "properties" : {
+        "@version" : { "type" : "text" },
+        "agent" : { "type" : "text", "fielddata" : true },
+        "agentinfo.os_name" : { "type" : "text", "fielddata" : true },
+        "auth" : { "type" : "text", "fielddata" : true },
+        "bytes" : { "type" : "double" },
+        "clientip" : { "type" : "ip" },
+        "destination_bytes" : { "type" : "double" },
+        "hostname" : { "type" : "text", "fielddata" : true },
+        "httpversion" : { "type" : "text", "fielddata" : true },
+        "ident" : { "type" : "text", "fielddata" : true },
+        "ips" : { "type" : "ip" },
+        "response_code" : { "type" : "short" },
+        "path" : { "type" : "text", "fielddata" : true },
+        "original_message" : { "type" : "text", "fielddata" : true },
+	"referrer" : { "type" : "text" , "fielddata" : true },
+        "request" : { "type" : "text" , "fielddata" : true },
+        "request_method" : { "type" : "text" , "fielddata" : true },
+        "response" : { "type" : "short" },
+        "username" : { "type" : "text", "fielddata" : true },  
+        "verb" : { "type" : "text", "fielddata" : true },
+        "source_geo" : {
+          "type" : "object",
+          "properties" : {
+            "location" : { "type" : "geo_point" },
+            "latitude" : { "type" : "half_float" },
+            "longitude" : { "type" : "half_float" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>elk-stack</short>
+  <description>This is all of the SOF-ELK firewall ports.</description>
+  <port protocol="tcp" port="5044"/>
+  <port protocol="tcp" port="5601"/>
+  <port protocol="tcp" port="5514"/>
+  <port protocol="udp" port="5514"/>
+  <port protocol="tcp" port="5515"/>
+  <port protocol="udp" port="5515"/>
+  <port protocol="tcp" port="5516"/>
+  <port protocol="tcp" port="5517"/>
+  <port protocol="udp" port="5517"/>
+  <port protocol="tcp" port="6050"/>
+  <port protocol="tcp" port="6051"/>
+  <port protocol="tcp" port="6052"/>
+  <port protocol="tcp" port="6053"/>
+  <port protocol="udp" port="9995"/>
+</service>
+

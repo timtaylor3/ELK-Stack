@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>elk-netflow</short>
+  <description>This is part of the SOF-ELK firewall service.</description>
+  <port protocol="udp" port="9995"/>
+</service>
+

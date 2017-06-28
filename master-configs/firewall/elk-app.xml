@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>elk-app</short>
+  <description>These are the standard ELK and Beats ports. These are the minimum ports for basic function. 9200 and 9300 should not be allowed access through the firewall.</description>
+  <port protocol="tcp" port="5044"/>
+  <port protocol="tcp" port="5601"/>
+</service>
+

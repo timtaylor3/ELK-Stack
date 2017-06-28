@@ -1,0 +1,122 @@
+{
+  "template" : "logstash-*",
+  "version" : 50001,
+  "settings" : {
+    "number_of_replicas": 0,
+    "number_of_shards": 1,
+    "index.refresh_interval" : "5s"
+  },
+  "mappings" : {
+    "_default_" : {
+      "_all" : {"enabled" : true, "norms" : false},
+      "dynamic_templates" : [ {
+        "message_field" : {
+          "path_match" : "message",
+          "match_mapping_type" : "string",
+          "mapping" : {
+            "type" : "text",
+            "norms" : false
+          }
+        }
+      },
+      {
+         "pid_fields" : {
+           "match" : "*_pid",
+           "mapping" : { "type" : "integer"}
+          }
+      },
+      {
+         "port_fields" : {
+           "match" : "*_port",
+           "mapping" : { "type" : "integer"}
+          }
+      },
+      {
+         "ip_address_fields" : {
+           "match" : "*_ip",
+           "mapping" : { "type" : "ip" }
+          }
+       },
+      {
+        "string_fields" : {
+          "match" : "*",
+          "match_mapping_type" : "string",
+          "mapping" : {
+            "type" : "text", "norms" : false,
+            "fields" : {
+              "keyword" : { 
+                "type": "keyword" }
+            }
+          }
+        }
+      }  
+      ],
+      "properties" : {
+        "@timestamp": { "type": "date" },
+        "@version": { "type": "keyword" },
+	"host" : {"type" : "text", "fielddata" : true },
+        "ips" : { "type" : "ip" },
+        "key_id" : { "type" : "text", "index" : false},
+        "login_method" : {"type" : "text", "fielddata" : true },
+        "login_result" : {"type" : "text", "fielddata" : true },
+        "pam_module" : {"type" : "text", "fielddata" : true },
+        "pam_service" : {"type" : "text", "fielddata" : true },
+        "pam_sessiontype" : {"type" : "text", "fielddata" : true },
+        "path" : { "type" : "text", "index" : false },
+        "ports" : {"type" : "text", "fielddata" : true },
+        "original_message" : { "type" : "text", "index" : false },
+        "syslog_hostname" : {"type" : "text", "fielddata" : true },
+        "syslog_program" : {"type" : "text", "fielddata" : true },
+        "ttl" : { "type" : "integer" },
+        "user" : {"type" : "text", "fielddata" : true },
+        "geoip" : {
+          "dynamic" : true,
+          "properties" : {
+            "ip": { "type": "ip" },
+            "location" : { "type" : "geo_point" },
+            "latitude" : { "type" : "half_float" },
+            "longitude" : { "type" : "half_float" }
+          }
+        },
+        "source_geo" : {
+          "dynamic": true,
+          "type" : "object",
+          "properties" : {
+            "ip": { "type": "ip" },
+            "location" : { "type" : "geo_point" },
+            "latitude" : { "type" : "half_float" },
+            "longitude" : { "type" : "half_float" }
+          }
+        },
+        "destination_geo"  : {
+          "dynamic": true,
+          "type" : "object",
+          "properties" : {
+            "ip": { "type": "ip" },
+            "location" : { "type" : "geo_point" },
+            "latitude" : { "type" : "half_float" },
+            "longitude" : { "type" : "half_float" }
+          }
+        },
+         "relay_geo"  : {
+          "dynamic": true,
+          "properties" : {
+            "ip": { "type": "ip" },
+            "location" : { "type" : "geo_point" },
+            "latitude" : { "type" : "half_float" },
+            "longitude" : { "type" : "half_float" }
+          }
+        },
+        "answer_geo"  : {
+          "dynamic": true,
+          "properties" : {
+            "ip": { "type": "ip" },
+            "location" : { "type" : "geo_point" },
+            "latitude" : { "type" : "half_float" },
+            "longitude" : { "type" : "half_float" }
+          }
+        }
+      }
+    }
+  }
+}
