@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <service>
   <short>elk</short>
-  <description>This is the SOF-ELK firewall service.</description>
+  <description>This is the ELK firewall service.</description>
   <port protocol="tcp" port="5515"/>
   <port protocol="udp" port="5515"/>
   <port protocol="tcp" port="5517"/>
