@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <service>
   <short>elk-stack</short>
-  <description>This is all of the SOF-ELK firewall ports.</description>
+  <description>This is all of the ELK firewall ports.</description>
   <port protocol="tcp" port="5044"/>
   <port protocol="tcp" port="5601"/>
   <port protocol="tcp" port="5514"/>
