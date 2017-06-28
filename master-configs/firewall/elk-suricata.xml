@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<service>
-  <short>elk-suricata</short>
-  <description>This is part of the SOF-ELK firewall service.</description>
-  <port protocol="tcp" port="6053"/>
-</service>
-
