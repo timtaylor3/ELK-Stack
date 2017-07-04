@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<service>
-  <short>elk-syslog</short>
-  <description>This is part of the ELK firewall service.</description>
-  <port protocol="tcp" port="5514"/>
-  <port protocol="udp" port="5514"/>
-  <port protocol="tcp" port="5516"/>
-</service>
-
