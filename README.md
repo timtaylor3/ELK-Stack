@@ -31,7 +31,7 @@ I welcome sample logs to parse as long as they are shareable and will not cause 
 
 Sort of.  Take a look at [Security Onion](http://blog.securityonion.net/2017/06/towards-elastic-on-security-onion.html) if your are looking for network analysis functionality.  If you want a more mature system, check out [SOF-ELK](https://github.com/philhagen/sof-elk).  In most cases, one of these two systems might fit your needs.
 
-Want to roll your own from scratch, start here: [Giles's Notes](https://www.gilesorr.com/blog/elkbeats-intro.html)
+Want to roll your own from scratch, start here: [Giles's Notes](https://www.gilesorr.com/blog/elkbeats-intro.html) or here: [HowToForge](https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/).  Note on the latter link, the ssl configuration will work, but isn't optimal.
 
 ## Assumptions
 
