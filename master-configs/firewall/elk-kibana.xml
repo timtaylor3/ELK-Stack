@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>elk-kibana</short>
+  <description>This is the standard kibana port.</description>
+  <port protocol="tcp" port="5601"/>
+</service>
+

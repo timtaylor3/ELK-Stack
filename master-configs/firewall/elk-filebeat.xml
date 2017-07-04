@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>elk-filebeat</short>
+  <description>This is the standard filebeat port</description>
+  <port protocol="tcp" port="5044"/>
+</service>
+
