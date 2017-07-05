@@ -2,11 +2,11 @@
 
 **First and foremost:**  This work is highly derivative in that so far my original work is the install script. 
 
-Imagine you work for a large corporation that does not provide a global team with the proper tools to do collaborative log analysis.  Imagine that an awesome tool exists, but in present form isn't scalable and/or is not secure enough for the corporate enterprise?  This is my motivation and starting point for this project.  To address this, I've started this project based on Phil Hagen's project [SOF-ELK](https://github.com/philhagen/sof-elk).  Many thanks to him and others for this work.  
+Imagine you work for a global corporation that does not provide a highly trained global team with the proper tools to do collaborative log analysis.  Imagine that an awesome tool exists, but in present form isn't scalable and/or is not secure enough for the corporate enterprise?  This is my motivation and starting point for this project.  To address this, I've started this project based on Phil Hagen's project [SOF-ELK](https://github.com/philhagen/sof-elk).  Many thanks to him and others for this work.  
 
-My goal is to create a secure system that anyone can take and modify to their individual needs.  That means, no OS version lock in.  The script should always work on the latest verion of CentOS and hopefully the lastet verion of ELK.  Keep in mind that the makers of ELK depreciate frequently between verions, so this could be challenging.  
+My goal is to create a secure system that anyone can take and modify to their individual needs.  That means, no OS version lock in, no docker, special vodo in configuration files, or any kind of secret sauce.  The script should always work on the latest verion of CentOS and hopefully the lastet verion of ELK.  Keep in mind that the makers of ELK depreciate items frequently between verions, so this could be challenging.  
 
-This is my first attempt to create a secure ELK v5 stack for log analysis so that analyst in different locations can safely use the same tool/data for log analysis.  My end goal is to have a fully functional ELKv5 stack running with X-Pack and SSL enabled.  Ideally, a complete install would be accomplished by a script.  
+This is my first attempt to create a secure ELK v5 stack for log analysis.  The end goal is that analyst in different locations can securely use the same tool/data for log analysis.  My end goal is to have a fully functional ELKv5 stack running with X-Pack and SSL enabled.  Ideally, a complete install would be accomplished by a script, so that anyone can easily modify and create their own secure ELK instance.  
 
 ## Status:
 
@@ -17,6 +17,9 @@ This is my first attempt to create a secure ELK v5 stack for log analysis so tha
   +    Ubuntu                                                     -- Not Tested
 + Utilize SSL to connect Filebeat with Logstash                   -- Complete
 + X-Pack installation                                             -- In-Progress (X-Pack is buggy or this would be done)
+
+## Issues:
++ Once X-Pack is installed and configured, Kibana won't start.  This issue does not appear to be related to the security settings.
 
 ## Why CentOS?
 
