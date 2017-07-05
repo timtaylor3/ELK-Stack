@@ -183,6 +183,9 @@ cd /usr/local/share/GeoIP/
 
 find . -type f -name "*.mmdb" -exec ln -s '{}' \;
 
+# GeoIP fix to allow the use of GeoLite2-ASN (Needs testing)
+/usr/share/logstash/bin/logstash-plugin update logstash-filter-geoip
+
 cd $INSTALL_DIR
 
 echo "Copy /root/certs/logstash-forwarder.crt to /root/certs/on the file beat collectors"
