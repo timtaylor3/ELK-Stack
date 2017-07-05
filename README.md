@@ -13,9 +13,10 @@ This is my first attempt to create a secure ELK v5 stack for log analysis so tha
 + CentOS 7 with SELinux Enforcing                                 -- Complete
 + Lastet ELK 5 Stack will install on CentOS 7                     -- Complete
 + Configure Filebeat to operate on separate nodes:         
-  +    CentOS                                                      -- Complete
-  +    Ubuntu                                                      -- Not Tested
+  +    CentOS                                                     -- Complete
+  +    Ubuntu                                                     -- Not Tested
 + Utilize SSL to connect Filebeat with Logstash                   -- Complete
++ X-Pack installation                                             -- In-Progress (X-Pack is buggy or this would be done)
 
 ## Why CentOS?
 
