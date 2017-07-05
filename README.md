@@ -22,6 +22,8 @@ This is my first attempt to create a secure ELK v5 stack.  The end goal is that 
 
 ## Issues:
 + Once X-Pack is installed and the security features are configured, Kibana won't start.  This issue does not appear to be related to the security settings.
+  +  kibana: FATAL CLI ERROR YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 57, column 1:
+
 
 ## Why CentOS?
 
