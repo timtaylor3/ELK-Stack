@@ -161,10 +161,6 @@ systemctl enable nginx  >/dev/null 2>&1
 systemctl start nginx
 
 cd $INSTALL_DIR
-
-# Maxmind
-# Use of Maxmind data needs to be tested.  Downloading to have the latest available
-# Presently not used.
  
 echo "Setting up GeoIP from Maxmind"
 mkdir -p /usr/local/share/GeoIP/
