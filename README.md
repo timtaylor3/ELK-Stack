@@ -18,12 +18,12 @@ This is my first attempt to create a secure ELK v5 stack.  The end goal is that 
 + Utilize SSL to connect Filebeat with Logstash                   -- Complete
 + X-Pack installation                                             -- Complete
 + Make Kibana work again                                          -- WIP
-+ Connect logstash to elasticsearch using encryption              -- Configured not tested
++ Connect logstash to elasticsearch using encryption              -- WIP
 
 ## Issues:
-+ After X-Pack installation and configuration, kibana is running, but not responding/listening.
-  + Looks like an SSL/TLS issue.
-  + Also logstash can not connect to elasticsearch
++ After X-Pack installation and configuration 
+  + kibana is running, but not responding/listening.
+  + Logstash cannot connect to elasticsearch
 
 
 ## Why CentOS?
@@ -48,23 +48,24 @@ I assume the user know something about how Kibana works and can browse to the ap
 
 New syslog records can be ingested by placing them in a /logstash/syslog/year/.  The year will be added to the syslog date, since syslog doesn't store the year.  New httpd logs can be ingested simply by putting them in /logstash/httpd.  
 
-## TODO: 
+## TODO, in no certain order: 
 * Fix the sample HTTP log so it will parse properly.
-* Create an initial syslog entry that has more fields parsed out, perhaps mimick an ssh log entry.
-* Keep checking to see if logstash can use the maxmind db with ASN data (ASOF 5.4.3, this didn't work.)
 * Add the ability for graphics to be displayed in a markdown 
 * Upload and maintain working VM to share
 * Add the ability to:
     + "cat" or "zcat" logs into the stack (I'm not the big fan of this capability since it requires the opening and closing of ports on the firewall.
+    + Create basic dashboards and visualizations
     + insert saved dashboards and visualizations
-    + Create the indexes on install
-    + Build logstash pipelines based on logs
-* Maybe some documentation
+    + Create the default indexes on install, will require initial data
+* Maybe some documentation, would be nice.
 * Create a brand name?
-* Install X-Pack and SSL using a script (I could use some advice/assistance on this piece.)
-    + X-Pack with no SSL
-    + Add SSL
-    + Automate the creation of a secure ELK Cluster
-    + Automate the installation
+* Install X-Pack and SSL using a script (WIP)
+ * Automate the creation of a secure ELK Cluster
 * Refine the install script
+* Maintaince scripts:
+  + Key re-generation - Needs testing
+  + System password reset - Needs testing
+  + Database reset - Not started
+  + Reset Filebeat to re-ingest data - Not started
+
 * More to come
