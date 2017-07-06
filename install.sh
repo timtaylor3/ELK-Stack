@@ -53,7 +53,7 @@ yum -y install kibana >/dev/null 2>&1
 
 echo "Configuring Kibana"
 sed -i '/#server.port: /s/^#//' /etc/kibana/kibana.yml
-sed -i '/#server.host: /c\server.host: "0.0.0.0"' /etc/kibana/kibana.yml
+# sed -i '/#server.host: /c\server.host: "0.0.0.0"' /etc/kibana/kibana.yml
 
 # Hack to fix the server name line, uncomment the line and then replace the name
 sed -i '/#server.name: /s/^#//' /etc/kibana/kibana.yml
@@ -109,6 +109,11 @@ echo "Installing Logstash plugins"
 /usr/share/logstash/bin/logstash-plugin install logstash-filter-translate >/dev/null 2>&1
 /usr/share/logstash/bin/logstash-plugin install logstash-filter-tld >/dev/null 2>&1
 
+# GeoIP fix to allow the use of GeoLite2-ASN
+/usr/share/logstash/bin/logstash-plugin update logstash-filter-geoip >/dev/null 2>&1
+# updating beats
+/usr/share/logstash/bin/logstash-plugin update logstash-input-beats >/dev/null 2>&1
+
 echo "Configuring Logstash"
 mkdir -p /usr/local/elk/configfiles
 mkdir -p /usr/local/elk/dashboards
@@ -161,6 +166,10 @@ systemctl enable nginx  >/dev/null 2>&1
 systemctl start nginx
 
 cd $INSTALL_DIR
+
+# Maxmind
+# Use of Maxmind data needs to be tested.  Downloading to have the latest available
+# Presently not used.
  
 echo "Setting up GeoIP from Maxmind"
 mkdir -p /usr/local/share/GeoIP/
@@ -178,9 +187,6 @@ tar -xf GeoLite2-ASN.tar.gz -C /usr/local/share/GeoIP/
 cd /usr/local/share/GeoIP/
 
 find . -type f -name "*.mmdb" -exec ln -s '{}' \;
-
-# GeoIP fix to allow the use of GeoLite2-ASN (Needs testing)
-/usr/share/logstash/bin/logstash-plugin update logstash-filter-geoip
 
 cd $INSTALL_DIR
 
