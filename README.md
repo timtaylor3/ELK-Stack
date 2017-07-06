@@ -23,6 +23,7 @@ This is my first attempt to create a secure ELK v5 stack.  The end goal is that 
 ## Issues:
 + After X-Pack installation and configuration, kibana is running, but not responding/listening.
   + Looks like an SSL/TLS issue.
+  + Also logstash can not connect to elasticsearch
 
 
 ## Why CentOS?
