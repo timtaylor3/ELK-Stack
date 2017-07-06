@@ -1,12 +1,14 @@
 # ELK-Stack
 
-**First and foremost:**  This work is highly derivative in that so far my original work is the install script. 
+**First and foremost:**  This work is highly derivative in that so far my original work is the install script. I'm scripting a custom install, so of course others have done this.
 
 Imagine you work for a global corporation that does not provide a highly trained global team with the proper tools to do collaborative log analysis.  Imagine that an awesome tool exists, but in present form isn't scalable and/or is not secure enough for the corporate enterprise?  This is my motivation and starting point for this project.  To address this, I've started this project based on Phil Hagen's project [SOF-ELK](https://github.com/philhagen/sof-elk).  Many thanks to him and others for this work.  
 
-My goal is to create a secure system that anyone can take and modify to their individual needs.  That means, no OS version lock in, no docker, special voodoo in configuration files, or any kind of secret sauce.  The script should always work on the latest verion of CentOS and hopefully the lastet verion of ELK.  Keep in mind that the makers of ELK depreciate items frequently between verions, so this could be challenging.  
+My goal is to create a secure system that anyone can take and modify to their individual needs.  That means, no OS version lock in, no docker, no special voodoo in configuration files, or any kind of secret sauce.  The script should always work on the latest verion of CentOS and hopefully the lastet verion of ELK.  Keep in mind that the makers of ELK depreciate items frequently between verions, so this could be challenging.  
 
-This is my first attempt to create a secure ELK v5 stack.  The end goal is that analyst in different locations can securely use the same tool/data for log analysis.  My end goal is to have a fully functional ELKv5 stack running with X-Pack and SSL enabled.  Ideally, a complete install would be accomplished by a script, so that anyone can easily modify and create their own secure ELK instance.  
+This is my first attempt to create a secure ELK v5 stack. X-Pack is not free, so that convenience is out.
+
+The end goal is that analyst in different locations can securely use the same tool/data for log analysis.  Ideally, a complete install would be accomplished by a script, so that anyone can easily modify and create their own secure ELK instance.  
 
 ## Status:
 
@@ -16,21 +18,13 @@ This is my first attempt to create a secure ELK v5 stack.  The end goal is that 
   +    CentOS                                                     -- Complete
   +    Ubuntu                                                     -- Not Tested
 + Utilize SSL to connect Filebeat with Logstash                   -- Complete
-+ X-Pack installation                                             -- Complete
-+ Make Kibana work again                                          -- WIP
-+ Connect logstash to elasticsearch using encryption              -- WIP
 
-## Issues:
-+ After X-Pack installation and configuration 
-  + kibana is running, but not responding/listening.
-  + Logstash cannot connect to elasticsearch
-
+## Next Item:
++ Create a custom log on method in-lieu of X-Pack
 
 ## Why CentOS?
 
 I'm using CentOS 7 as my base operating system to ensure it can run in a Red Hat enviornment with little to no modification.  It shouldn't be to hard to adapt this script to Ubuntu, if that's your Linux flavor of choice.  I may support Ubuntu in the future.
-
-My current focus is a, secure functionality; ie, get data in and allow the user to create their own visualzations and dashboards.  Gettting the X-Pack Security module and SSL enabled is top priority.
 
 I will be adding logstash config files as I have **time and logs** to validate the logstash configurations.  Since this is based on the hard work of Phil Phil Hagen's SOF-ELK, I have used some of the SOF-ELK configs as a starting point.  In this initial release only basic functionailty has been included; ie, no visualizations or dashboards.  
 
@@ -39,8 +33,6 @@ I welcome sample logs to parse as long as they are shareable and will not cause 
 ## Hasn't someone already done this
 
 Sort of.  Take a look at [Security Onion](http://blog.securityonion.net/2017/06/towards-elastic-on-security-onion.html) if your are looking for network analysis functionality.  If you want a more mature system, check out [SOF-ELK](https://github.com/philhagen/sof-elk).  In most cases, one of these two systems might fit your needs.
-
-Want to roll your own from scratch, start here: [Giles's Notes](https://www.gilesorr.com/blog/elkbeats-intro.html) or here: [HowToForge](https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/).  Note on the latter link, the ssl configuration will work, but isn't optimal.
 
 ## Assumptions
 
@@ -58,13 +50,9 @@ New syslog records can be ingested by placing them in a /logstash/syslog/year/. 
     + insert saved dashboards and visualizations
     + Create the default indexes on install, will require initial data
 * Maybe some documentation, would be nice.
-* Create a brand name?
-* Install X-Pack and SSL using a script (WIP)
- * Automate the creation of a secure ELK Cluster
 * Refine the install script
 * Maintaince scripts:
   + Key re-generation - Needs testing
-  + System password reset - Needs testing
   + Database reset - Not started
   + Reset Filebeat to re-ingest data - Not started
 
