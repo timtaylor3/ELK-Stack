@@ -14,5 +14,6 @@ filebeat:
         - /logstash/syslog/*
       input_type: log
       document_type: syslog
+      tags: ["syslog"]
       exclude_files: [ '\.gz$', '\.bz2$', '\.zip$' ]
       close_inactive: 5m

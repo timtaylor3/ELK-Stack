@@ -13,6 +13,6 @@ filebeat:
         - /logstash/httpd/*/*
         - /logstash/httpd/*
       input_type: log
-      document_type: httpdlog
+      tags: ["httpdlog"]
       exclude_files: [ '\.gz$', '\.bz2$', '\.zip$' ]
       close_inactive: 5m
