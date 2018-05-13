@@ -8,18 +8,18 @@ Imagine you work for a global corporation that does not provide a highly trained
 
 My goal is to create a secure system that anyone can take and modify to their individual needs.  That means, no OS version lock in, no docker, no special voodoo in configuration files, or any kind of secret sauce.  The script should always work on the latest verion of CentOS and hopefully the lastet verion of ELK.  Keep in mind that the makers of ELK depreciate items frequently between verions, so this could be challenging.  
 
-This is my first attempt to create a secure ELK v5 stack. X-Pack is not free, so that convenience is out.
+X-Pack is not free, so that convenience is out. I'm looking for alternatives.
 
 The end goal is that analyst in different locations can securely use the same tool/data for log analysis.  Ideally, a complete install would be accomplished by a script, so that anyone can easily modify and create their own secure ELK instance.  
 
 ## Status:
 
 + CentOS 7 with SELinux Enforcing                                 -- Complete
-+ Lastet ELK 5 Stack will install on CentOS 7                     -- Complete
++ Latest ELK 6 Stack will install on CentOS 7                     -- Testing
 + Configure Filebeat to operate on separate nodes:         
-  +    CentOS                                                     -- Complete
+  +    CentOS                                                     -- Testing
   +    Ubuntu                                                     -- Not Tested
-+ Utilize SSL to connect Filebeat with Logstash                   -- Complete
++ Utilize SSL to connect Filebeat with Logstash                   -- Testing
 
 ## Next Item:
 + Create a custom log on method in-lieu of X-Pack
