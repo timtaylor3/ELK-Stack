@@ -1,5 +1,7 @@
 # ELK-Stack
 
+**Working on an update to version 6.**
+
 **First and foremost:**  This work is highly derivative in that so far my original work is the install script. I'm scripting a custom install, so of course others have done this.
 
 Imagine you work for a global corporation that does not provide a highly trained global team with the proper tools to do collaborative log analysis.  Imagine that an awesome tool exists, but in present form isn't scalable and/or is not secure enough for the corporate enterprise?  This is my motivation and starting point for this project.  To address this, I've started this project based on Phil Hagen's project [SOF-ELK](https://github.com/philhagen/sof-elk).  Many thanks to him and others for this work.  
