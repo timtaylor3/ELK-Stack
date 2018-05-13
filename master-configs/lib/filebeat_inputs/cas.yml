@@ -1,0 +1,10 @@
+# This file creates a filebeat prospector for cas source data 
+
+filebeat.prospectors:
+ - type: log
+   paths: 
+    - /logstash/cas/*.csv
+   tags: ["cas"]
+   encoding: plain
+   close_eof: true
+
