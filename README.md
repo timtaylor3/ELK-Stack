@@ -1,12 +1,10 @@
 # ELK-Stack
 
-**Working on an update to version 6.**
-
 **First and foremost:**  This work is highly derivative in that so far my original work is the install script. I'm scripting a custom install, so of course others have done this.
 
 Imagine you work for a global corporation that does not provide a highly trained global team with the proper tools to do collaborative log analysis.  Imagine that an awesome tool exists, but in present form isn't scalable and/or is not secure enough for the corporate enterprise?  This is my motivation and starting point for this project.  To address this, I've started this project based on Phil Hagen's project [SOF-ELK](https://github.com/philhagen/sof-elk).  Many thanks to him and others for this work.  
 
-My goal is to create a secure system that anyone can take and modify to their individual needs.  That means, no OS version lock in, no docker, no special voodoo in configuration files, or any kind of secret sauce.  The script should always work on the latest verion of CentOS and hopefully the lastet verion of ELK.  Keep in mind that the makers of ELK depreciate items frequently between verions, so this could be challenging.  
+My goal is to create a secure system that anyone can take and modify to their individual needs.  That means, no OS version (No distro) lock in, no docker, no special voodoo in configuration files, or any kind of secret sauce.  The script should always work on the latest verion of CentOS and hopefully the lastet verion of ELK.  Keep in mind that the makers of ELK depreciate items frequently between verions, so this could be challenging.  
 
 X-Pack is not free, so that convenience is out. I'm looking for alternatives.
 
@@ -15,11 +13,12 @@ The end goal is that analyst in different locations can securely use the same to
 ## Status:
 
 + CentOS 7 with SELinux Enforcing                                 -- Complete
-+ Latest ELK 6 Stack will install on CentOS 7                     -- Testing
++ Latest ELK 6 Stack will install on CentOS 7                     -- Complete
 + Configure Filebeat to operate on separate nodes:         
-  +    CentOS                                                     -- Testing
+  +    CentOS                                                     -- Complete
   +    Ubuntu                                                     -- Not Tested
-+ Utilize SSL to connect Filebeat with Logstash                   -- Testing
++ Utilize SSL to connect Filebeat with Logstash                   -- Complete
++ Logstash configureations need to be updated to remove logic where "Type" is used in favor of "Tags"  -- Working
 
 ## Next Item:
 + Create a custom log on method in-lieu of X-Pack
