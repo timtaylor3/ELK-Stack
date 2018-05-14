@@ -18,7 +18,7 @@ The end goal is that analyst in different locations can securely use the same to
   +    CentOS                                                     -- Complete
   +    Ubuntu                                                     -- Not Tested
 + Utilize SSL to connect Filebeat with Logstash                   -- Complete
-+ Logstash configureations need to be updated to remove logic where "Type" is used in favor of "Tags"  -- Working
++ Logstash configureations need to be updated to remove logic where "Type" is used in favor of "Tags"  -- Complete
 
 ## Next Item:
 + Create a custom log on method in-lieu of X-Pack
@@ -33,7 +33,9 @@ I welcome sample logs to parse as long as they are shareable and will not cause 
 
 ## Hasn't someone already done this
 
-Sort of.  Take a look at [Security Onion](http://blog.securityonion.net/2017/06/towards-elastic-on-security-onion.html) if your are looking for network analysis functionality.  If you want a more mature system, check out [SOF-ELK](https://github.com/philhagen/sof-elk).  In most cases, one of these two systems might fit your needs.
+Sort of.  Take a look at [Security Onion](http://blog.securityonion.net/2017/06/towards-elastic-on-security-onion.html) if your are looking for network analysis functionality.  If you want a more mature system, check out [SOF-ELK](https://github.com/philhagen/sof-elk).  In most cases, one of these two systems might fit your needs.  
+
+If you need customization, then it is likely, these won't work. This script and configurations will get you to the fun stuff faster.
 
 ## Assumptions
 
