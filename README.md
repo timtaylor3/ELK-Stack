@@ -21,6 +21,8 @@ The end goal is that analyst in different locations can securely use the same to
 + Logstash configureations need to be updated to remove logic where "Type" is used in favor of "Tags"  -- Complete
 
 ## Next Item:
++ Configure SSL between Elasticsearch and Kibana
++ Configure SSL Kibana browser access 
 + Create a custom log on method in-lieu of X-Pack
 
 ## Why CentOS?
