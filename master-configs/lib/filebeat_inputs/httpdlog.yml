@@ -1,8 +1,3 @@
-# SOF-ELK Configuration File
-# (C)2017 Lewes Technology Consulting, LLC
-#
-# This file creates a filebeat prospector for httpd access log source data from the SOF-ELK VM itself
-
 filebeat.prospectors:
  - type: log
    paths: 
