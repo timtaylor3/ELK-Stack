@@ -1,9 +1,7 @@
 #!/bin/bash
+# Install script for Elasticsearch v6. Version 6.2 tested
 # This install script was tested on CentOS 7 with SELinux enforcing.
-
-# This variable should point to the directory where this script resides.
-# All of the config files should be in a directory named master-configs
-# The master-configs directory should be a child directory to where the install script is located
+# CentOS VM was created using Server with GUI & Development Tools and Standard System Security Profile selected
 
 INSTALL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DEVICE="$(ip route | grep default | awk '{print $5}')"
@@ -103,16 +101,16 @@ firewall-cmd --reload
 echo "Installing Logstash"
 yum -y install logstash >/dev/null 2>&1
 
-echo "Installing Logstash plugins"
-/usr/share/logstash/bin/logstash-plugin install logstash-input-log4j >/dev/null 2>&1
-/usr/share/logstash/bin/logstash-plugin install logstash-input-relp >/dev/null 2>&1 
-/usr/share/logstash/bin/logstash-plugin install logstash-filter-translate >/dev/null 2>&1
-/usr/share/logstash/bin/logstash-plugin install logstash-filter-tld >/dev/null 2>&1
+# echo "Installing Logstash plugins"
+# /usr/share/logstash/bin/logstash-plugin install logstash-input-log4j >/dev/null 2>&1
+# /usr/share/logstash/bin/logstash-plugin install logstash-input-relp >/dev/null 2>&1 
+# /usr/share/logstash/bin/logstash-plugin install logstash-filter-translate >/dev/null 2>&1
+# /usr/share/logstash/bin/logstash-plugin install logstash-filter-tld >/dev/null 2>&1
 
 # GeoIP fix to allow the use of GeoLite2-ASN
-/usr/share/logstash/bin/logstash-plugin update logstash-filter-geoip >/dev/null 2>&1
+# /usr/share/logstash/bin/logstash-plugin update logstash-filter-geoip >/dev/null 2>&1
 # updating beats
-/usr/share/logstash/bin/logstash-plugin update logstash-input-beats >/dev/null 2>&1
+# /usr/share/logstash/bin/logstash-plugin update logstash-input-beats >/dev/null 2>&1
 
 echo "Configuring Logstash"
 mkdir -p /usr/local/elk/configfiles

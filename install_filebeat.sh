@@ -1,10 +1,13 @@
 #!/bin/bash
+# Install script for Filebeat v6. Version 6.2 tested
 # This install script was tested on CentOS 7 with SELinux enforcing.
+# CentOS VM was created using Server with GUI & Development Tools and Standard System Security Profile selected
+#
 # Not tested: Installing on Ubuntu
-
+#
 # All of the config files should be in a directory named master-configs
 # The master-configs directory should be a child directory to where the install script is located
-
+#
 # This script is run after the main install script on a host resolveable to elk-master
 
 INSTALL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -29,7 +32,7 @@ else
    if [ $UBUNTU -eq 'Ubuntu' ]; then
       echo "Installing filebeat on Ubuntu."
       wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-      echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | tee -a /etc/apt/sources.list.d/elasticsearch-5.x.list
+      echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | tee -a /etc/apt/sources.list.d/elasticsearch-6.x.list
       apt-get update 
       apt-get -y install filebeat
    else
