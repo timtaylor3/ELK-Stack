@@ -1,11 +1,13 @@
+# This file creates a filebeat prospector for httpd source data 
+
 filebeat.prospectors:
  - type: log
    paths: 
-        - /logstash/httpd/*/*/*/*/*
-        - /logstash/httpd/*/*/*/*
-        - /logstash/httpd/*/*/*
-        - /logstash/httpd/*/*
-        - /logstash/httpd/*
-      tags: ["httpdlog"]
-      exclude_files: [ '\.gz$', '\.bz2$', '\.zip$' ]
-      close_inactive: 5m
+    - /logstash/httpd/*/*/*/*/*
+    - /logstash/httpd/*/*/*/*
+    - /logstash/httpd/*/*/*
+    - /logstash/httpd/*/*
+    - /logstash/httpd/*
+   tags: ["httpd"]
+   encoding: plain
+   close_inactive: 5m

@@ -1,0 +1,13 @@
+# This file creates a filebeat prospector for csv source data 
+
+filebeat.prospectors:
+ - type: log
+   paths: 
+    - /logstash/csv/*/*/*/*/*.csv
+    - /logstash/csv/*/*/*/*.csv
+    - /logstash/csv/*/*/*.csv
+    - /logstash/csv/*/*.csv
+    - /logstash/csv/*.csv
+   tags: ["csv"]
+   encoding: plain
+   close_eof: true
