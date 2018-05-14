@@ -3,17 +3,14 @@
 #
 # This file creates a filebeat prospector for syslog source data from the SOF-ELK VM itself
 
-filebeat:
-  prospectors:
-    -
-      paths:
+filebeat.prospectors:
+ - type: log
+   paths: 
         - /logstash/syslog/*/*/*/*/*
         - /logstash/syslog/*/*/*/*
         - /logstash/syslog/*/*/*
         - /logstash/syslog/*/*
         - /logstash/syslog/*
-      input_type: log
-      document_type: syslog
       tags: ["syslog"]
       exclude_files: [ '\.gz$', '\.bz2$', '\.zip$' ]
       close_inactive: 5m
