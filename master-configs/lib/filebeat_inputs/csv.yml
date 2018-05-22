@@ -3,10 +3,6 @@
 filebeat.prospectors:
  - type: log
    paths: 
-    - /logstash/csv/*/*/*/*/*.csv
-    - /logstash/csv/*/*/*/*.csv
-    - /logstash/csv/*/*/*.csv
-    - /logstash/csv/*/*.csv
     - /logstash/csv/*.csv
    tags: ["csv"]
    encoding: plain
