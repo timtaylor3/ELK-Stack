@@ -61,5 +61,6 @@ systemctl enable filebeat  >/dev/null 2>&1
 systemctl start filebeat
 
 mkdir -p /logstash/cas
+mkdir -p /logstash/csv
 mkdir -p /logstash/httpd
 mkdir -p /logstash/syslog
