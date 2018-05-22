@@ -4,11 +4,11 @@
 
 Imagine you work for a global corporation that does not provide a highly trained global team with the proper tools to do collaborative log analysis.  Imagine that an awesome tool exists, but in present form isn't scalable and/or is not secure enough for the corporate enterprise?  This is my motivation and starting point for this project.  To address this, I've started this project based on Phil Hagen's project [SOF-ELK](https://github.com/philhagen/sof-elk).  Many thanks to him and others for this work.  
 
-My goal is to create a secure system that anyone can take and modify to their individual needs.  That means, no OS version (No distro) lock in, no docker, no special voodoo in configuration files, or any kind of secret sauce.  The script should always work on the latest verion of CentOS and hopefully the lastet verion of ELK.  Keep in mind that the makers of ELK depreciate items frequently between verions, so this could be challenging.  
+My goal is to create a secure system that anyone can take and modify to their individual needs.  That means, no docker, no special voodoo in configuration files, or any kind of secret sauce.  The script should always work on the latest verion of CentOS and hopefully the lastet verion of ELK.  Keep in mind that the makers of ELK depreciate items frequently between versions, so this could be challenging.  
 
-X-Pack is not free, so that convenience is out. I'm looking for alternatives.
+X-Pack is not free, so that convenience is out. I'm looking for alternatives.  I may re-visit this as an option in the future.
 
-The end goal is that analyst in different locations can securely use the same tool/data for log analysis.  Ideally, a complete install would be accomplished by a script, so that anyone can easily modify and create their own secure ELK instance.  
+The end goal is that analyst in different locations can securely use the same tool/data for log analysis.  Ideally, a complete install would be accomplished by a script, so that anyone can easily modify and create their own secure ELK instance.  Also, in the future, I would like to add support for separate hosts handling elasticsearch, logstash and kibana.
 
 ## Status:
 
@@ -18,7 +18,7 @@ The end goal is that analyst in different locations can securely use the same to
   +    CentOS                                                     -- Complete
   +    Ubuntu                                                     -- Not Tested
 + Utilize SSL to connect Filebeat with Logstash                   -- Complete
-+ Logstash configureations need to be updated to remove logic where "Type" is used in favor of "Tags"  -- Complete
++ Logstash configurations need to be updated to remove logic where "Type" is used in favor of "Tags"  -- Complete
 
 ## Next Item:
 + Configure SSL between Elasticsearch and Kibana
@@ -35,7 +35,7 @@ I welcome sample logs to parse as long as they are shareable and will not cause 
 
 ## Hasn't someone already done this
 
-Sort of.  Take a look at [Security Onion](http://blog.securityonion.net/2017/06/towards-elastic-on-security-onion.html) if your are looking for network analysis functionality.  If you want a more mature system, check out [SOF-ELK](https://github.com/philhagen/sof-elk).  In most cases, one of these two systems might fit your needs.  
+Sort of.  Take a look at [Security Onion](http://blog.securityonion.net/2017/06/towards-elastic-on-security-onion.html) if your are looking for network analysis functionality.  If you want a more mature system or security isn't a concern, check out [SOF-ELK](https://github.com/philhagen/sof-elk).  In most cases, one of these two systems might fit your needs.  
 
 If you need customization, then it is likely, these won't work. This script and configurations will get you to the fun stuff faster.
 
@@ -46,19 +46,19 @@ I assume the user know something about how Kibana works and can browse to the ap
 New syslog records can be ingested by placing them in a /logstash/syslog/year/.  The year will be added to the syslog date, since syslog doesn't store the year.  New httpd logs can be ingested simply by putting them in /logstash/httpd.  
 
 ## TODO, in no certain order: 
-* Fix the sample HTTP log so it will parse properly.
-* Add the ability for graphics to be displayed in a markdown 
+* Fix the sample HTTP log so it will parse properly. (Not an easy task)
+* Add the ability for graphics to be displayed on the dashboards.
 * Upload and maintain working VM to share
 * Add the ability to:
     + "cat" or "zcat" logs into the stack (I'm not the big fan of this capability since it requires the opening and closing of ports on the firewall.
     + Create basic dashboards and visualizations
-    + insert saved dashboards and visualizations
+    + Insert saved dashboards and visualizations
     + Create the default indexes on install, will require initial data
 * Maybe some documentation, would be nice.
-* Refine the install script
+* Refine the install script to branch for Ubuntu.
 * Maintaince scripts:
   + Key re-generation - Needs testing
-  + Database reset - Not started
+  + Database/index reset - Not started
   + Reset Filebeat to re-ingest data - Not started
 
 * More to come
