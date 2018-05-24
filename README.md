@@ -66,4 +66,4 @@ Filebeat config files are very picky and white space in the wrong spot will caus
   + Reset Filebeat to re-ingest data - Not started
 * More logstash filters.
 * Logstash CSV output filter.
-* Create a set of scripts to install on multiple systems (Need all security features implented first).
+* Create a set of scripts to install on multiple systems (Need all security features implemented first).
