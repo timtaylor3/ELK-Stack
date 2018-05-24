@@ -9,22 +9,22 @@ My goal is to create a secure system that anyone can take and modify to their in
 The end goal is that analyst in different locations can securely use the same tool/data for log analysis.  Ideally, a complete install would be accomplished by a script, so that anyone can easily modify and create their own secure ELK instance.  Also, in the future, I would like to add support for separate hosts handling elasticsearch, logstash and kibana.
 
 ## Enabled Security Features
-+ CentOS 7 with SELinux Enforcing 
-+ Firewall enabled and locked down
-+ SSL between filebeat and logstash  
+* CentOS 7 with SELinux Enforcing 
+* Firewall enabled and locked down
+* SSL between filebeat and logstash  
 
 ## Status:
-+ Configure Filebeat to operate on separate nodes:         
+* Configure Filebeat to operate on separate nodes:         
   +    CentOS                                                     -- Complete
   +    Ubuntu                                                     -- Not Tested
 
 ## Next Items:
-+ Add X-Pack to the install script (Contains useful developer tools)
-+ Configure SSL to Nginx (Really important to get this done soon)
-   + Remaining Security configs to allow for multi-hosts stack:
-     + Configure SSL between kibana and Nginx access  (Not really necessary if kibana and nginix are on the same host)
-     + Configure SSL between Elasticsearch and Kibana (Not really necessary if elaselasticsearch and kibana are on the same host)
-     + Configure SSL between logstash and elasticsearch (Not really necessary if logstash and elaselasticsearch are on the same host)
+* Add X-Pack to the install script (Contains useful developer tools)
+* Configure SSL to Nginx (Really important to get this done soon)
+* Remaining Security configs to allow for multi-hosts stack:
+  + Configure SSL between kibana and Nginx access  (Not really necessary if kibana and nginix are on the same host)
+  + Configure SSL between Elasticsearch and Kibana (Not really necessary if elaselasticsearch and kibana are on the same host)
+  + Configure SSL between logstash and elasticsearch (Not really necessary if logstash and elaselasticsearch are on the same host)
 
 ## Why CentOS?
 
