@@ -1,3 +1,3 @@
 # ELK-Stack
 
-Rebooting this project soon based on numeours version updates to the ELK stack.
+Rebooting this project soon based on numerous version updates to the ELK stack.
